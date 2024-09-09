@@ -11,26 +11,22 @@
 ----------------------------------------------
 ------------MOD CODE -------------------------
 
-
-
 function Back:trigger_effect(args)
-if self.name == 'Painted Deck' and args.context == 'final_scoring_step' then
-    local tot = args.chips + args.mult
-    args.chips = math.floor(tot/2)
-    args.mult = math.floor(tot/2)
-    update_hand_text({delay = 0}, {mult = args.mult, chips = args.chips})
+    if self.name == 'Blue Deck' or self.name == 'Red Deck' or self.name == 'Yellow Deck' or self.name == 'Green Deck' or self.name == 'Black Deck' or
+    self.name == 'Magic Deck' or self.name == 'Nebula Deck' or self.name == 'Ghost Deck' or self.name == 'Abandoned Deck' or self.name == 'Checkered Deck' or
+    self.name == 'Zodiac Deck' or self.name == 'Painted Deck' or self.name == 'Anaglyph Deck' or self.name == 'erratic Deck'and args.context == 'final_scoring_step' then
 
-    G.E_MANAGER:add_event(Event({
-        func = (function()
-            local text = localize('k_balanced')
-            play_sound('gong', 0.94, 0.3)
-            play_sound('gong', 0.94*1.5, 0.2)
-            play_sound('tarot1', 1.5)
-            ease_colour(G.C.UI_CHIPS, {0.8, 0.45, 0.85, 1})
-            ease_colour(G.C.UI_MULT, {0.8, 0.45, 0.85, 1})
-            attention_text({
-                scale = 1.4, text = text, hold = 2, align = 'cm', offset = {x = 0,y = -2.7},major = G.play
-            })
+        G.E_MANAGER:add_event(Event({
+            func = (function()
+                local text = localize('k_balanced')
+                play_sound('gong', 0.94, 0.3)
+                play_sound('gong', 0.94*1.5, 0.2)
+                play_sound('tarot1', 1.5)
+                ease_colour(G.C.UI_CHIPS, {0.8, 0.45, 0.85, 1})
+                ease_colour(G.C.UI_MULT, {0.8, 0.45, 0.85, 1})
+                attention_text({
+                    scale = 1.4, text = text, hold = 2, align = 'cm', offset = {x = 1,y = -2.7},major = G.play
+                })
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 blockable = false,
