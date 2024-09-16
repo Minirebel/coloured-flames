@@ -35,13 +35,12 @@ local config = {
 local flame_handler_ref = G.FUNCS.flame_handler
 function G.FUNCS.flame_handler(e)
     -- stuff you do before calling the old flame_handler
-
     if config.boss_colours then
         ------------------
         -- the boss shift
         ------------------
 
-            if G.GAME.blind.name == "The Hook" then
+            if G.GAME.blind.name == "The Hook" then -- needs  colour fixing
                 ease_colour(G.C.UI_CHIPS, {0.114, 0.227, 0.592, 1})
                 ease_colour(G.C.UI_MULT, {0.114, 0.227, 0.592, 1})
             end
@@ -183,32 +182,34 @@ function G.FUNCS.flame_handler(e)
                 ease_colour(G.C.UI_MULT, {0.000, 0.420, 0.776, 1})
             end
         ---==============
-        --- BOSSES done
+        --- BOSSES done!
         ---==============
-                    if G.defeated then
-                            ease_colour(G.C.UI_CHIPS, G.C.BLUE, 2)
-                            ease_colour(G.C.UI_MULT, G.C.RED, 2)
-                        return true
-                    end
-                end
-        ---------------------------------------------------------------------
-       
+        end
+        if G.GAME.round_resets.blind_states.Boss == 'Defeated' then
+            ease_colour(G.C.UI_CHIPS, G.C.BLUE, 2)
+            ease_colour(G.C.UI_MULT, G.C.RED, 2)
+        end
         ------------------------------------
         --   PLAYER CHOSEN COLOURS ONLY!
         ------------------------------------
+        --- have a slider for red, blue and green induvidually
+        --- and the slider is from 0 > 1
+        --- and a slider for opacasy? did i spell that right? oh well, doesn't matter as long as i know what it means
+
             --chips
             if config.personal_chips then 
-                ease_colour(G.C.UI_CHIPS, {0.25, 0.81, 0.98, 1})
+                ease_colour(G.C.UI_CHIPS, {0, 0, 0, 1})
             end
 
             --mult
             if config.personal_mult then
-                ease_colour(G.C.UI_MULT, {0.96, 0.66, 0.72, 1})
+                ease_colour(G.C.UI_MULT, {0, 0, 0, 1})
             end
 
+
+
+
 local result = flame_handler_ref(e) -- top = before, bottom = after 
-
-
 
 return result
 end
