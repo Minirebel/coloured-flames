@@ -6,11 +6,11 @@
 --- BADGE_COLOUR: c60000
 --- DISPLAY_NAME: flame
 --- VERSION: 1.0.0
+--- prefix: FLAME
 --- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-0812d]
 
 ----------------------------------------------
-------------MOD CODE -------------------------
-
+---------mod code-----------------------------
 SMODS.Atlas {
     key = "modicon",
     path = "logo.png",
@@ -18,12 +18,12 @@ SMODS.Atlas {
     py = 32
   }
 
+
 local config = {
     -- user settings
     --==============
     --chips
     personal_chips = false,
-    
     --mult
     personal_mult = false,
     --==============
@@ -40,9 +40,9 @@ function G.FUNCS.flame_handler(e)
         -- the boss shift
         ------------------
 
-            if G.GAME.blind.name == "The Hook" then -- needs  colour fixing
-                ease_colour(G.C.UI_CHIPS, {0.114, 0.227, 0.592, 1})
-                ease_colour(G.C.UI_MULT, {0.114, 0.227, 0.592, 1})
+            if G.GAME.blind.name == "The Hook" then 
+                ease_colour(G.C.UI_CHIPS, {0.592, 0.153, 0.031})
+                ease_colour(G.C.UI_MULT, {0.592, 0.153, 0.031})
             end
 
             if G.GAME.blind.name == "The Ox" then
