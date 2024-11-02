@@ -90,8 +90,8 @@ function G.FUNCS.flame_handler(e)
             end
 
             if G.GAME.blind.name == "The Water" then
-                ease_colour(G.C.UI_CHIPS, {0.710, 0.886, 0.937, 1})
-                ease_colour(G.C.UI_MULT, {0.710, 0.886, 0.937, 1})
+                ease_colour(G.C.UI_CHIPS, {0.710, 0.820, 0.867, 1})
+                ease_colour(G.C.UI_MULT, {0.710, 0.820, 0.867, 1})
             end
 
             if G.GAME.blind.name == "The Window" then
