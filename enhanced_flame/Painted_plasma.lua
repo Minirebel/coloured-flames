@@ -31,7 +31,6 @@ local config = {
     --==============
 }
 
-
 local flame_handler_ref = G.FUNCS.flame_handler
 function G.FUNCS.flame_handler(e)
     -- stuff you do before calling the old flame_handler
@@ -40,9 +39,9 @@ function G.FUNCS.flame_handler(e)
         -- the boss shift
         ------------------
 
-            if G.GAME.blind.name == "The Hook" then 
-                ease_colour(G.C.UI_CHIPS, {0.592, 0.153, 0.031})
-                ease_colour(G.C.UI_MULT, {0.592, 0.153, 0.031})
+            if G.GAME.blind.name == "The Hook" then
+                ease_colour(G.C.UI_CHIPS, {0.592, 0.153, 0.031, 1})
+                ease_colour(G.C.UI_MULT, {0.592, 0.153, 0.031, 1})
             end
 
             if G.GAME.blind.name == "The Ox" then
